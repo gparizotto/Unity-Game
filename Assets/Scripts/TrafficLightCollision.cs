@@ -75,7 +75,6 @@ public class TrafficLightCollision : MonoBehaviour
         
         if(timeRemaining <= 30 && timeRemaining > 15)
         {
-            Debug.Log("Passouuu");
             passou_verde = true;
             passou_vermelho = false;
             passou_amarelo = false;
