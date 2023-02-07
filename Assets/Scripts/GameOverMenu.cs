@@ -11,12 +11,14 @@ public class GameOverMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        //Time.timeScale = 0f;
         Conecta_semaforos.NoMoreLives += EnableGameOverMenu;
         //GameIsOver = false;
     }
 
     private void OnDisable()
     {
+        //Time.timeScale = 1f;
         Conecta_semaforos.NoMoreLives -= EnableGameOverMenu;
         //GameIsOver = true;
     }

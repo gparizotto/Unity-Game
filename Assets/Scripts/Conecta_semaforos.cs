@@ -135,7 +135,7 @@ public class Conecta_semaforos : MonoBehaviour
 
         if(vida == 0)
         {
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             NoMoreLives?.Invoke();
         }
 
