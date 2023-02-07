@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,9 @@ public class Conecta_semaforos : MonoBehaviour
 
     int maxVel = 60, vel;
 
+    public static event Action NoMoreLives;
+
+    [SerializeField] Sons sons;
     [SerializeField] TrafficLightCollision semaforo1;
     [SerializeField] Semaforo2 semaforo2;
     [SerializeField] Semaforo3 semaforo3;
@@ -129,6 +133,11 @@ public class Conecta_semaforos : MonoBehaviour
             timeRemaining_text.text = "";
         }
 
+        if(vida == 0)
+        {
+            Time.timeScale = 0f;
+            NoMoreLives?.Invoke();
+        }
 
         scoreText.text = "Score: " + score.ToString();  
     }
