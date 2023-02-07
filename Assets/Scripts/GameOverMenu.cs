@@ -7,11 +7,11 @@ public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverUI;
 
-    //public static bool GameIsOver = false;
+    public static bool GameIsOver = false;
 
     private void OnEnable()
     {
-        //Time.timeScale = 0f;
+        Time.timeScale = 1f;
         Conecta_semaforos.NoMoreLives += EnableGameOverMenu;
         //GameIsOver = false;
     }
@@ -19,6 +19,7 @@ public class GameOverMenu : MonoBehaviour
     private void OnDisable()
     {
         //Time.timeScale = 1f;
+        GameIsOver = false;
         Conecta_semaforos.NoMoreLives -= EnableGameOverMenu;
         //GameIsOver = true;
     }
@@ -30,12 +31,14 @@ public class GameOverMenu : MonoBehaviour
     
     public void JogarNovamente()
     {
+        //GameIsOver = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Sample Scene");
     }
 
     public void CarregaMenu2()
     {
+        //GameIsOver = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

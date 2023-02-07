@@ -51,9 +51,9 @@ public class Sons : MonoBehaviour
             carAudio.pitch *= 0.1f;
         }
 
-        // if(GameOverMenu.GameIsOver)
-        // {
-        //     carAudio.pitch *= 0f;
-        // }
+        if(GameOverMenu.GameIsOver)
+        {
+            carAudio.pitch = 0f;
+        }
     }
 }
