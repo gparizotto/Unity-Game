@@ -37,7 +37,7 @@ public class Conecta_semaforos : MonoBehaviour
         if(semaforo1.passou_vermelho || semaforo2.passou_vermelho || semaforo3.passou_vermelho || semaforo4.passou_vermelho || semaforo5.passou_vermelho || semaforo6.passou_vermelho)
         {
             score -= 200;
-            heart.perdeu_vida = true;
+            //heart.perdeu_vida = true;
         }
         if(semaforo1.passou_amarelo || semaforo2.passou_amarelo || semaforo3.passou_amarelo || semaforo4.passou_amarelo || semaforo5.passou_amarelo || semaforo6.passou_amarelo)
             score -= 50;
