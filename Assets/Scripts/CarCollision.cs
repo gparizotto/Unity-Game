@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class car_collision : MonoBehaviour
+public class CarCollision : MonoBehaviour
 {
-    int bateu = 0;
+    public int count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +16,8 @@ public class car_collision : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter(Collision c)
+    void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(bateu++);
+        count++;
     }
 }

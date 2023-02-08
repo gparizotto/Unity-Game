@@ -7,9 +7,10 @@ using TMPro;
 
 public class Conecta_semaforos : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI scoreText, scoreText2;
     public TextMeshProUGUI maxSpeedText;
     public TextMeshProUGUI timeRemaining_text;
+    bool passou1 = false, passou2 = false, passou3 = false;
     public int score = 0;
 
     public int vida = 3;
@@ -19,6 +20,8 @@ public class Conecta_semaforos : MonoBehaviour
     float timeRemaining = 3;
 
     int maxVel = 60, vel;
+
+    int bateu = 0;
 
     public static event Action NoMoreLives;
 
@@ -30,6 +33,7 @@ public class Conecta_semaforos : MonoBehaviour
     [SerializeField] Semaforo5 semaforo5;
     [SerializeField] Semaforo6 semaforo6;
     [SerializeField] private Image img1, img2, img3;
+    public GameObject max_speed_canva, time_remaining_canva, score_canva, speed_canva;
     //[SerializeField] Semaforo7 semaforo7;
     // Start is called before the first frame update
     void Start()
@@ -40,6 +44,42 @@ public class Conecta_semaforos : MonoBehaviour
     void Update()
     {
         speed = gameObject.GetComponent<Speed>().speed;
+        bateu = gameObject.GetComponent<CarCollision>().count;
+        if(bateu > 0){
+            if(bateu == 1 && !passou1)
+            {
+                
+                passou1 = true;
+                vida--;
+            }
+            else if(bateu == 2 && !passou2)
+            {
+                
+                passou2 = true;
+                vida--;
+            }
+            else if(bateu == 3 && !passou3)
+            {
+                
+                passou3 = true;
+                vida--;
+            }
+
+            if(vida == 2)
+            {
+                img3.enabled = false;
+            }
+            else if(vida == 1)
+            {
+                img2.enabled = false;
+            }
+            else if(vida == 0)
+            {
+                img1.enabled = false;
+            }
+            
+        }
+
         vel = 3*((int) speed);
 
 
@@ -135,11 +175,16 @@ public class Conecta_semaforos : MonoBehaviour
 
         if(vida == 0)
         {
+            max_speed_canva.SetActive(false);
+            score_canva.SetActive(false);
+            time_remaining_canva.SetActive(false);
+            speed_canva.SetActive(false);
             Time.timeScale = 0f;
             GameOverMenu.GameIsOver = true;
             NoMoreLives?.Invoke();
         }
 
         scoreText.text = "Score: " + score.ToString();  
+        scoreText2.text = "Pontuação: " + score.ToString(); 
     }
 }
