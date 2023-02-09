@@ -10,7 +10,7 @@ public class Conecta_semaforos : MonoBehaviour
     public TextMeshProUGUI scoreText, scoreText2;
     public TextMeshProUGUI maxSpeedText;
     public TextMeshProUGUI timeRemaining_text;
-    public AudioSource buzina;
+    public AudioSource buzina, scoreEffect;
 
     bool passou1 = false, passou2 = false, passou3 = false;
     public int score = 0;
@@ -19,7 +19,8 @@ public class Conecta_semaforos : MonoBehaviour
     
     public float speed;
     public float space;
-    public bool perdeu = false;
+    public bool perdeu_gameover = false;
+    public bool perdeu_pause = false;
 
     float timeRemaining = 3;
 
@@ -42,6 +43,7 @@ public class Conecta_semaforos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -51,10 +53,12 @@ public class Conecta_semaforos : MonoBehaviour
         bateu = gameObject.GetComponent<CarCollision>().count;
         space += gameObject.GetComponent<Speed>().space;
 
-        if(space > 100 && !perdeu)
+        if(space > 100 && !perdeu_gameover && !perdeu_pause)
         {
             space = 0; 
             score += 100;
+            if(score > 0 && score % 1000 == 0)
+                scoreEffect.Play();
         }    
 
 
@@ -204,11 +208,16 @@ public class Conecta_semaforos : MonoBehaviour
             Time.timeScale = 0f;
             GameOverMenu.GameIsOver = true;
             if(GameOverMenu.GameIsOver)
-                perdeu = true;
+                perdeu_gameover = true;
             else
-                perdeu = false;    
+                perdeu_gameover = false;    
             NoMoreLives?.Invoke();
         }
+
+        if(PauseMenu.GameIsPaused)
+            perdeu_pause = true;
+        else
+            perdeu_pause = false;    
 
         scoreText.text = "Pontuação: " + score.ToString();  
         scoreText2.text = "Pontuação: " + score.ToString();  

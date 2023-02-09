@@ -6,13 +6,20 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverUI;
+    public AudioSource gameOverEffect;
 
     public static bool GameIsOver = false;
+
+    void Start()
+    {
+        gameOverEffect.playOnAwake = false;
+    }
 
     private void OnEnable()
     {
         Time.timeScale = 1f;
         Conecta_semaforos.NoMoreLives += EnableGameOverMenu;
+       // gameOverEffect.Play();
         //GameIsOver = false;
     }
 
@@ -26,7 +33,10 @@ public class GameOverMenu : MonoBehaviour
 
     public void EnableGameOverMenu()
     {
+//        gameOverEffect.Play();
         gameOverUI.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     
     public void JogarNovamente()
