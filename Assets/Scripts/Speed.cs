@@ -7,6 +7,7 @@ using TMPro;
 public class Speed : MonoBehaviour
 {
     public float speed;
+    public float space = 0;
     public float prev;
     public TextMeshProUGUI scoreText;
 
@@ -55,5 +56,6 @@ public class Speed : MonoBehaviour
         Vector3 lastPosition = transform.position;
         yield return new WaitForFixedUpdate();
         speed = (lastPosition - transform.position).magnitude / Time.deltaTime;
+        space = (lastPosition - transform.position).magnitude;
     }
 }
