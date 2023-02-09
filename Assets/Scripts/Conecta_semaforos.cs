@@ -131,7 +131,7 @@ public class Conecta_semaforos : MonoBehaviour
             buzina.Play();
         }
         if(semaforo1.passou_amarelo || semaforo2.passou_amarelo || semaforo3.passou_amarelo || semaforo4.passou_amarelo || semaforo5.passou_amarelo || semaforo6.passou_amarelo)
-            score -= 50;
+            score -= 100;
 
         if(semaforo1.passou_verde || semaforo1.passou_amarelo || semaforo1.passou_vermelho)
         {

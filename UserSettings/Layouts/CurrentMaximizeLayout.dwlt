@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 29740
+  controlID: 42772
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 29741
+  controlID: 42773
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 29742
+  controlID: 42774
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,9 +231,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4e59ffff
-      m_LastClickedID: -42674
-      m_ExpandedIDs: 4e59ffffc698ffff26d3ffff36fbffffa0830100b2830100
+      m_SelectedIDs: 2edd0200
+      m_LastClickedID: 187694
+      m_ExpandedIDs: 5af8feff080bffff1e0fffff7a0fffff2814ffff4614ffff4e59ffffc698ffff26d3ffff36fbffffa0830100b283010026dd02002edd02004edd0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -690,21 +690,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Images
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Images
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Microsoft\Desktop\Teste\unity2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 326f0000
-    m_LastClickedID: 28466
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 446f0000
+    m_LastClickedID: 28484
     m_ExpandedIDs: 00000000006f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -758,8 +758,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4e59ffff
-    m_LastClickedInstanceID: -42674
+    m_SelectedInstanceIDs: 2edd0200
+    m_LastClickedInstanceID: 187694
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ae8c000000000000
     m_RenameOverlay:
