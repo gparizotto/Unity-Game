@@ -65,6 +65,7 @@ public class Conecta_semaforos : MonoBehaviour
                 passou1 = true;
                 vida--;
                 buzina.Play();
+                score -= 200;
             }
             else if(bateu == 2 && !passou2)
             {
@@ -72,6 +73,7 @@ public class Conecta_semaforos : MonoBehaviour
                 passou2 = true;
                 vida--;
                 buzina.Play();
+                score -= 200;
             }
             else if(bateu == 3 && !passou3)
             {
@@ -79,6 +81,7 @@ public class Conecta_semaforos : MonoBehaviour
                 passou3 = true;
                 vida--;
                 buzina.Play();
+                score -= 200;
             }
 
             if(vida == 2)
@@ -107,7 +110,7 @@ public class Conecta_semaforos : MonoBehaviour
         //     score += 100;
         if(semaforo1.passou_vermelho || semaforo2.passou_vermelho || semaforo3.passou_vermelho || semaforo4.passou_vermelho || semaforo5.passou_vermelho || semaforo6.passou_vermelho)
         {
-            score -= 200;
+            score -= 300;
             if(vida == 3)
             {
                 img3.enabled = false;
@@ -153,8 +156,8 @@ public class Conecta_semaforos : MonoBehaviour
         }
         if(semaforo6.passou_verde || semaforo6.passou_amarelo || semaforo6.passou_vermelho)
         {
-            maxSpeedText.text = "70";      
-            maxVel = 70;          
+            maxSpeedText.text = "120";      
+            maxVel = 120;          
         }
 
         maxSpeedText.text = maxVel.ToString();
@@ -163,7 +166,7 @@ public class Conecta_semaforos : MonoBehaviour
             timeRemaining -= Time.deltaTime;
         else if(vel > maxVel && timeRemaining >= 0 && timeRemaining <= 3)
         {
-            timeRemaining_text.text = "TEMPO RESTANTE: " + timeRemaining.ToString("0.0");
+            timeRemaining_text.text = timeRemaining.ToString("0");
             timeRemaining -= Time.deltaTime;
         }
         else if(vel <= maxVel)
@@ -207,7 +210,7 @@ public class Conecta_semaforos : MonoBehaviour
             NoMoreLives?.Invoke();
         }
 
-        scoreText.text = "Score: " + score.ToString();  
+        scoreText.text = "Pontuação: " + score.ToString();  
         scoreText2.text = "Pontuação: " + score.ToString();  
     }
 }
